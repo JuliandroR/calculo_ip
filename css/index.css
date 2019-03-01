@@ -1,0 +1,24 @@
+/*content*/
+
+.content{
+    padding-bottom: 10vh;
+    width: 98%;
+    margin: 2vh 1% 0 1%;
+}
+
+.content-text{
+    width: 90%;
+    margin: 0 5%;
+}
+
+.title-text{
+    text-align: right;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.text{
+    text-align: justify;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/subnet.css">
+
+
+    <title>Sub-rede</title>
+</head>
+
+<body>
+    <div class="header">
+        <h2 onclick="goToForSubnet('home')" class="title-header cursor_click">IP e Sub-Redes</h2>
+        <div class="menu-header">
+            <a onclick="goToForSubnet('ip')" class="item-menu-header cursor_click">Dados do Ip</a>
+            <a onclick="goToForSubnet('sub-net')" class="item-menu-header cursor_click">Cálculo de Sub Rede</a>
+        </div>
+    </div>
+
+    <h2 class="title-page">
+        Sub Redes
+    </h2>
+
+    <div class="content">
+        <div id="primeira_parte">
+            <h2 class="title_description">Cálculadora de Sub Redes na Classe C</h2>
+            <div class="content_part">
+                <input type="text" class="input" id="ip" placeholder="Insira o IP desejado da classe C">
+                <input type="text" class="input" id="quant" placeholder="Insira a quantidade de sub redes desejada">
+                <div class="buttons">
+                    <button v-on:click="calc" class="button">Exibir Dados</button>
+                    <button v-on:click="clear" class="button">Limpar</button>
+                </div>
+            </div>
+            <div class="content-table">
+                <table class="table">
+
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Nova Máscara
+                        </th>
+                        <td class="content-line"> {{ nova_mascara }} </td>
+                    </tr>
+
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Host's válidos Total
+                        </th>
+                        <td class="content-line"> {{ hosts_validos_total }} </td>
+                    </tr>
+
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Host's válidos por Sub Rede
+                        </th>
+                        <td class="content-line"> {{ hosts_validos }} </td>
+                    </tr>
+
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Sub Redes Criadas
+                        </th>
+                        <td class="content-line">
+                            <li v-for="item in sub_redes"> {{ item }} </li>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="segunda_parte">
+            <h2 class="title_description">Sub Redes por Quantidade de Host's</h2>
+            <div class="content_part">
+                <input type="text" class="input" id="ip_desejo" placeholder="Insira o IP da rede desejada">
+                <input type="text" class="input" id="quant_hosts" placeholder="Insira a quantidade de host's por Sub Rede">
+                <div class="buttons">
+                    <button v-on:click="calcular" class="button">Calcular</button>
+                    <button v-on:click="clear" class="button">Limpar</button>
+                </div>
+            </div>
+
+            <div class="content-table">
+                <table class="table">
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Nova Máscara
+                        </th>
+                        <td class="content-line"> {{ mask }}</td>
+                    </tr>
+                    <tr class="line-table">
+                        <th class="title-line">Quantidade de Sub Redes Possíveis</th>
+                        <td class="content-line"> {{ quant_sub_redes }}</td>
+                    </tr>
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Sub Redes Criadas
+                        </th>
+                        <td class="content-line">
+                            <li v-for="item in sub_redes"> {{ item }} </li>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="terceira_parte">
+            <h2 class="title_description">Entenda a atual divisão das Sub Redes</h2>
+            <div class="content_part">
+                <input type="text" class="input" id="ip_entrada" placeholder="Insira o IP desejado">
+                <input type="text" class="input" id="mascara" placeholder="Insira a Máscara atual de rede">
+                <div class="buttons">
+                    <button v-on:click="exibir" class="button">Exibir</button>
+                    <button v-on:click="clear" class="button">Limpar</button>
+                </div>
+            </div>
+
+            <div class="content-table">
+                <table class="table">
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Número de Sub Redes
+                        </th>
+                        <td class="content-line"> {{num_sub_redes }}</td>
+                    </tr>
+                    <tr class="line-table">
+                        <th class="title-line">
+                            Sub Redes Criadas
+                        </th>
+                        <td class="content-line">
+                            <li v-for="item in sub_redes"> {{ item }} </li>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="text-footer">Desenvolvido por:
+            <a class="text-footer" href="https://www.instagram.com/juliandro.rocha/">Juliandro Rocha Ribeiro</a></p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/subnet.js"></script>
+</body>
+
+</html>

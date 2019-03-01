@@ -1,0 +1,11 @@
+.content{
+    padding-bottom: 10vh;
+}
+
+.content-insert{
+    display: block;
+    width: 50%;
+    margin: 0 25%;
+    align-items: center;
+}
+

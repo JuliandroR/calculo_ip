@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/ip.css">
+
+    <title>IP</title>
+</head>
+
+<body>
+    <div class="header">
+        <h2 onclick="goToForIp('home')" class="title-header cursor_click">IP e Sub-Redes</h2>
+        <div class="menu-header">
+            <a onclick="goToForIp('ip')" class="item-menu-header cursor_click">Dados do Ip</a>
+            <a onclick="goToForIp('sub-net')" class="item-menu-header cursor_click">Cálculo de Sub Rede</a>
+        </div>
+    </div>
+
+    <h2 class="title-page">
+        Classes de IP
+    </h2>
+
+    <div id="content" class="content">
+        <div class="content-insert">
+            <input type="text" placeholder="Digite o IP Desejado" class="input" id="entrada">
+            <div class="buttons">
+                <button v-on:click="calc" class="button">Exibir Dados</button>
+                <button v-on:click="clear" class="button">Limpar</button>
+            </div>
+
+        </div>
+
+        <div class="content-table">
+            <table class="table">
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        IP
+                    </th>
+                    <td class="content-line">{{ ip }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        IP Válido?
+                    </th>
+                    <td class="content-line">{{ validade_ip }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        Classe do IP
+                    </th>
+                    <td class="content-line">{{ classe_ip }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        Máscara Padrão
+                    </th>
+                    <td class="content-line">{{ mascara }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        Endereço de Rede
+                    </th>
+                    <td class="content-line">{{ rede }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        1º Host Válido
+                    </th>
+                    <td class="content-line">{{ primeiro_host }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        Último Host Válido
+                    </th>
+                    <td class="content-line">{{ ultimo_host }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        Endereço de Broadcast
+                    </th>
+                    <td class="content-line">{{ broadcast }}</td>
+                </tr>
+
+                <tr class="line-table">
+                    <th class="title-line">
+                        IP Reservado para LAN?
+                    </th>
+                    <td class="content-line">{{ reservado }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p class="text-footer">Desenvolvido por:
+            <a class="text-footer" href="https://www.instagram.com/juliandro.rocha/">Juliandro Rocha Ribeiro</a></p>
+    </div>
+
+    <script src="../scripts/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../scripts/ip.js"></script>
+</body>
+
+</html>
